@@ -1,7 +1,7 @@
 export default function Nav() {
   return (
-    <nav className="flex flex-col">
-      <div className="flex flex-row justify-evenly items-center h-[88px] font-bold">
+    <nav className="flex flex-col fixed top-0 left-0 bg-white/50 w-full">
+      <div className="flex flex-row mx-auto space-x-4 items-center h-[88px] font-bold">
         <p>OmniMart</p>
         <p className="bg-blue-600 p-4 rounded-full">Departments</p>
         <p>Services</p>
