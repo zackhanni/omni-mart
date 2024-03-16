@@ -1,10 +1,68 @@
-import React from "react";
+import Link from "next/link";
 
 export default function Footer() {
+  const footerLinks = {
+    featured: [
+      { name: "Deals", link: "/" },
+      { name: "Grocery", link: "/" },
+      { name: "Essentials", link: "/" },
+      { name: "Fashion", link: "/" },
+      { name: "Ship", link: "/" },
+      { name: "Electronics", link: "/" },
+    ],
+
+    socials: [
+      { name: "other1", link: "/", icon: "" },
+      { name: "other2" },
+      { name: "other3" },
+      { name: "other4" },
+    ],
+  };
+
+  const contact = {
+    address: "123 Main St, Philadelphia, PA",
+    phone: "1-800-1234",
+    email: "email@email.com",
+  };
+
   return (
-    <div>
-      <p>footer</p>
-      <p>more footer</p>
-    </div>
+    <footer className="bg-green-200 px-4 py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+        <div>Logo here</div>
+        <div>
+          <h3 className="font-bold">Featured</h3>
+          {footerLinks.featured.map((link) => {
+            return (
+              <Link key={link.name} href={link.link}>
+                <p className="hover:underline">{link.name}</p>
+              </Link>
+            );
+          })}
+        </div>
+
+        <div>
+          <h3 className="font-bold">Contact us</h3>
+          <p>Address</p>
+          <p>{contact.address}</p>
+          <p>Phone</p>
+          <p>{contact.phone}</p>
+          <p>Email</p>
+          <p>{contact.email}</p>
+        </div>
+
+        <div>
+          <h3 className="font-bold">Instagram</h3>
+          {footerLinks.socials.map((link) => {
+            return (
+              <div key={link.name}>
+                <p>{link.name}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="text-center py-4">All social media icons here</div>
+      <p className="text-center text-xs">2024 OmniMart. All rights reserved.</p>
+    </footer>
   );
 }
