@@ -8,6 +8,7 @@ export default function Home() {
     <main className="">
       <Nav />
       <Hero />
+      <FlashDeals />
     </main>
   );
 }
