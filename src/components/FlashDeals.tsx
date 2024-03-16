@@ -1,7 +1,29 @@
 import React from "react";
+import ProductCard from "./ProductCard";
 
 export default function FlashDeals() {
-  const products = [1, 2, 3, 4, 5];
+  const products = [
+    {
+      name: "Item 1",
+      price: "$19.95",
+    },
+    {
+      name: "Item 2",
+      price: "$19.95",
+    },
+    {
+      name: "Item 3",
+      price: "$19.95",
+    },
+    {
+      name: "Item 4",
+      price: "$19.95",
+    },
+    {
+      name: "Item 5",
+      price: "$19.95",
+    },
+  ];
 
   return (
     <section className="px-4 py-8 space-y-8">
@@ -15,9 +37,11 @@ export default function FlashDeals() {
       <div className="flex space-x-4 overflow-x-scroll">
         {products.map((product) => {
           return (
-            <div key={product} className="bg-yellow-800 min-w-64 h-72">
-              product name
-            </div>
+            <ProductCard
+              key={product.name}
+              name={product.name}
+              price={product.price}
+            />
           );
         })}
       </div>
