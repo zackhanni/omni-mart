@@ -17,7 +17,7 @@ export default function Nav() {
         </p>
         <form className="min-w-[70%] lg:min-w-fit flex">
           <input
-            className="rounded-full px-8 py-4 font-normal w-full"
+            className="rounded-full px-8 font-normal w-full"
             placeholder="Search OmniMart"
           ></input>
           <button>Search icon</button>
@@ -28,19 +28,19 @@ export default function Nav() {
         <p className="hover:bg-purple-800 p-4 rounded-full hidden lg:block">
           Account <span className="font-normal">Sign In</span>
         </p>
-        <p className="hover:bg-purple-800 p-4 rounded-full hidden lg:block">
-          Card
-        </p>
+        <div className="hover:bg-purple-800 p-4 rounded-full flex flex-col">
+          Cart icon<p className="text-xs font-normal">$0.00</p>
+        </div>
       </div>
       <hr />
-      <div className="flex flex-row justify-evenly items-center">
+      <div className="flex flex-row justify-evenly items-center py-2 text-sm">
         <p>Philadelphia, 19148 - Milkyway Supercenter</p>
-        <p>Deals</p>
-        <p>Grocery</p>
-        <p>Essentials</p>
-        <p>Fashion</p>
-        <p>Ship</p>
-        <p>Electronics</p>
+        <p className="hidden sm:block">Deals</p>
+        <p className="hidden lg:block">Grocery</p>
+        <p className="hidden md:block">Essentials</p>
+        <p className="hidden lg:block">Fashion</p>
+        <p className="hidden md:block">Ship</p>
+        <p className="hidden lg:block">Electronics</p>
       </div>
     </nav>
   );
