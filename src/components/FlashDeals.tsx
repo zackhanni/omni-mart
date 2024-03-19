@@ -4,22 +4,22 @@ import ProductCard from "./ProductCard";
 export default function FlashDeals() {
   const products = [
     {
-      name: "Item 1",
+      name: "Look at this album cover, its it just neato?",
       price: "$19.95",
       image: "/product1.jpg",
     },
     {
-      name: "Item 2",
+      name: "This is product 2 and it has a description",
       price: "$19.95",
       image: "/product2.jpg",
     },
     {
-      name: "Item 3",
+      name: "OMG its product 3. I just love the way it looks",
       price: "$19.95",
       image: "/product3.jpg",
     },
     {
-      name: "Item 4",
+      name: "Ok, now its time for product 4. its going to be longer than the others",
       price: "$19.95",
       image: "/product4.webp",
     },
