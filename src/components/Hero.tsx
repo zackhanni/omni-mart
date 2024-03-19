@@ -1,16 +1,28 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section>
-      <div className="h-screen w-full bg-blue-900 flex items-center">
-        <div className="flex flex-col w-fit bg-blue-700 text-2xl">
-          <h1>The new Sale is here!</h1>
-          <p>buy today. limited time deal</p>
-          <p>99.99 moneys</p>
-          <button className="bg-blue-500 w-fit">Buy now</button>
+    <section className="pt-[124px] relative sm:h-screen w-full overflow-hidden bg-purple-300">
+      <div className="">
+        <div>
+          <Image
+            src="/hero-shopping.jpg"
+            width={1920}
+            height={1080}
+            alt="Hero image of lady holding bags"
+            className="w-full h-full"
+          />
         </div>
-        <div></div>
+        <div className="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 lg:top-1/2 left-1/3 text-white bg-black/20 p-4">
+          <p>NEW ARRIVALS</p>
+          <h1 className="text-4xl">Best Prices This Millenia</h1>
+          <p>Flux capacitors</p>
+          <p>Our Price: $99.99</p>
+          <button className="bg-purple-600 hover:bg-purple-800 rounded-full px-4 py-1 w-fit mt-2">
+            Shop now
+          </button>
+        </div>
       </div>
     </section>
   );
