@@ -3,6 +3,8 @@ import FlashDeals from "@/components/FlashDeals";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
+import ProductBlocks from "@/components/ProductBlocks";
+import Spacer from "@/components/Spacer";
 import Image from "next/image";
 
 export default function Home() {
@@ -11,6 +13,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <FlashDeals />
+      <Spacer />
+      <ProductBlocks />
       <CreditCardAd />
       <Footer />
     </main>
