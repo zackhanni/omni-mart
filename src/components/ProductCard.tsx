@@ -20,7 +20,7 @@ export default function ProductCard(props: ProductCardProps) {
   }
 
   return (
-    <div className="min-w-48 h-72 relative overflow-y-hidden ">
+    <div className="min-w-48 w-64 h-96 relative overflow-y-hidden ">
       <div className="top-2 right-2 absolute text-xl">
         <FontAwesomeIcon
           icon={isFavorite ? faSolidHeart : faHeart}
