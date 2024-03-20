@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="pt-[124px] relative sm:h-screen w-full overflow-hidden bg-purple-300">
+    <section className="pt-[124px] relative sm:max-h-screen w-full overflow-hidden bg-purple-300">
       <div className="">
         <div>
           <Image
