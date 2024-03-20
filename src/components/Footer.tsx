@@ -33,7 +33,7 @@ export default function Footer() {
           Give feedback
         </button>
       </div>
-      <div className="bg-purple-600 text-white py-4 space-y-4">
+      <div className="text-white py-4 space-y-4 bg-gradient-to-r from-indigo-500 to-purple-500">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-10 px-4 max-w-screen-xl mx-auto">
           <div>Logo here</div>
           <div>
