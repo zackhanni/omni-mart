@@ -10,6 +10,7 @@ export default function Hero() {
             src="/hero-shopping.jpg"
             width={1920}
             height={1080}
+            priority
             alt="Hero image of lady holding bags"
             className="w-full h-full"
           />
