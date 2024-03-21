@@ -41,7 +41,7 @@ export default function ProductCard(props: ProductCardProps) {
       <div className="py-4">
         <p className="font-bold">{props.price}</p>
         <p className="py-2">{props.name}</p>
-        <button className="outline hover:outline-2 rounded-full py-1 px-4 ml-1">
+        <button className="outline outline-1 hover:outline-2 rounded-full py-1 px-4 ml-1">
           + Add
         </button>
       </div>
