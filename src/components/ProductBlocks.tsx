@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function ProductBlocks() {
   return (
-    <section className="flex px-4 space-x-4 py-4">
-      <div className="w-1/3 rounded-lg p-4 bg-gradient-to-r from-cyan-500 to-blue-500">
+    <section className="flex flex-col sm:flex-row space-x-4 py-4">
+      <div className="sm:w-1/3 rounded-lg p-4 bg-gradient-to-r from-cyan-500 to-blue-500">
         <div className="space-y-4">
           <p>left side content</p>
           <p className="text-4xl">Larger text</p>
@@ -12,7 +12,7 @@ export default function ProductBlocks() {
           </button>
         </div>
       </div>
-      <div className="w-1/3 space-y-4">
+      <div className="sm:w-1/3 space-y-4">
         <div className="rounded-lg p-4 bg-gradient-to-r from-blue-500 to-purple-500">
           <div className="space-y-4">
             <p> center top</p>
@@ -23,8 +23,8 @@ export default function ProductBlocks() {
             </p>
           </div>
         </div>
-        <div className="flex space-x-4">
-          <div className="rounded-lg p-4 bg-gradient-to-r from-blue-500 to-indigo-500">
+        <div className="flex sm:space-x-4 space-y-4 sm:space-y-0">
+          <div className="rounded-lg p-4 bg-gradient-to-r from-blue-500 to-indigo-500 w-1/2">
             <div className="space-y-4">
               <p> middle, bottom, left</p>
               <p>
@@ -34,7 +34,7 @@ export default function ProductBlocks() {
               </p>
             </div>
           </div>
-          <div className="rounded-lg p-4 bg-gradient-to-r from-indigo-500 to-purple-500">
+          <div className="rounded-lg p-4 bg-gradient-to-r from-indigo-500 to-purple-500 w-1/2">
             <div className="space-y-4">
               <p> middle, bottom, right</p>
               <p>
