@@ -31,7 +31,7 @@ export default function FlashDeals() {
   ];
 
   return (
-    <section className="px-4 pt-8 pb-4 space-y-8">
+    <section className="pt-4 pb-4 space-y-8">
       <div className="flex justify-between">
         <div>
           <h2 className="font-semibold text-2xl">Flash Deals</h2>
