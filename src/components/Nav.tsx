@@ -9,6 +9,8 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
+import Logo from "./Logo";
 
 export default function Nav() {
   const navMenuItems = [
@@ -18,9 +20,11 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="flex flex-col fixed top-0 left-0 w-full z-10">
-      <div className="text-white flex flex-row justify-center space-x-4 items-center h-[88px] font-bold w-full z-30 px-4 bg-gradient-to-r from-indigo-500 to-purple-500">
-        <p>OmniMart</p>
+    <nav className="flex flex-col fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+      <div className="flex flex-row justify-center space-x-4 items-center h-[88px] font-bold w-full z-30 px-4">
+        <div className="">
+          <Logo />
+        </div>
         <p className="hover:bg-purple-800 p-4 rounded-full hidden lg:block">
           <FontAwesomeIcon icon={faRectangleList} className="pr-2" />
           Departments
@@ -33,6 +37,7 @@ export default function Nav() {
           <input
             className="rounded-full px-8 py-2 font-normal w-full"
             placeholder="Search OmniMart"
+            name="nav-search"
           ></input>
           <button className="pl-3 pr-1 hover:bg-purple-800 rounded-full text-center">
             <FontAwesomeIcon icon={faMagnifyingGlass} className="pr-2" />
@@ -45,26 +50,35 @@ export default function Nav() {
         <div className="hover:bg-purple-800 p-4 rounded-full hidden lg:flex items-center">
           <FontAwesomeIcon icon={faUser} className="pr-2" />
           <div className="flex flex-col">
-            <span className="font-normal text-sm">Sign In</span>
+            <span className="font-normal text-sm -mb-1">Sign In</span>
             Account
           </div>
         </div>
         <div className="hover:bg-purple-800 p-4 rounded-full flex flex-col">
           <FontAwesomeIcon icon={faCartShopping} />
-          <p className="text-xs font-normal">$0.00</p>
+          <p className="text-xs font-normal pt-1">$0.00</p>
         </div>
       </div>
-      <div className="bg-purple-300 text-black flex flex-row space-x-8 items-center px-4 py-2 text-sm">
+      <hr />
+      <div className="flex flex-row space-x-8 items-center px-4 py-2 text-sm">
         <p>Philadelphia, 19148 - Milkyway Supercenter</p>
         <p>|</p>
-        <p className="lg:hidden block hover:underline">Departments</p>
-        <p className="xl:hidden block hover:underline">Services</p>
-        <p className="hidden sm:block hover:underline">Deals</p>
-        <p className="hidden lg:block hover:underline">Grocery</p>
-        <p className="hidden md:block hover:underline">Essentials</p>
-        <p className="hidden lg:block hover:underline">Fashion</p>
-        <p className="hidden md:block hover:underline">Ship</p>
-        <p className="hidden lg:block hover:underline">Electronics</p>
+        <p className="lg:hidden block hover:underline font-semibold">
+          Departments
+        </p>
+        <p className="xl:hidden block hover:underline font-semibold">
+          Services
+        </p>
+        <p className="hidden sm:block hover:underline font-semibold">Deals</p>
+        <p className="hidden lg:block hover:underline font-semibold">Grocery</p>
+        <p className="hidden md:block hover:underline font-semibold">
+          Essentials
+        </p>
+        <p className="hidden lg:block hover:underline font-semibold">Fashion</p>
+        <p className="hidden md:block hover:underline font-semibold">Ship</p>
+        <p className="hidden lg:block hover:underline font-semibold">
+          Electronics
+        </p>
       </div>
     </nav>
   );
