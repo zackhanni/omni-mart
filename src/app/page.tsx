@@ -12,10 +12,13 @@ export default function Home() {
     <main className="">
       <Nav />
       <Hero />
-      <FlashDeals />
-      <Spacer />
-      <ProductBlocks />
-      <CreditCardAd />
+      <div className="max-w-screen-2xl mx-auto px-4">
+        <CreditCardAd />
+        <FlashDeals />
+        <Spacer />
+        <ProductBlocks />
+        <CreditCardAd />
+      </div>
       <Footer />
     </main>
   );
