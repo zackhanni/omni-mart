@@ -1,14 +1,17 @@
+import { faCreditCard } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React from "react";
 
 export default function CreditCardAd() {
   return (
-    <div className="flex justify-center items-center p-4 rounded-md mx-4 my-2 shadow-xl outline outline-gray-100 space-x-4">
+    <div className="flex justify-center items-center py-5 rounded-md my-4 shadow-xl space-x-4 outline outline-gray-100 outline-1">
       <p>
+        <FontAwesomeIcon icon={faCreditCard} className="text-2xl pr-4" />
         <span>Earn 5% cash back.</span> See if you&apos;re pre-approved with no
         credit risk.
       </p>
-      <Link href="/" className="underline bg-orange-300 rounded-md p-2">
+      <Link href="/" className="underline text-sm">
         Learn how
       </Link>
     </div>
