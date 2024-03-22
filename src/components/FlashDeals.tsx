@@ -1,10 +1,9 @@
-import React from "react";
-import ProductCard from "./ProductCard";
+import { ProductCardVertical } from "./ProductCard";
 
 export default function FlashDeals() {
   const products = [
     {
-      name: "Look at this album cover, its it just neato?",
+      name: "Look at this album cover, isnt it just neato?",
       price: "$19.95",
       image: "/product1.jpg",
     },
@@ -42,7 +41,7 @@ export default function FlashDeals() {
       <div className="flex space-x-4 overflow-x-scroll ">
         {products.map((product) => {
           return (
-            <ProductCard
+            <ProductCardVertical
               key={product.name}
               name={product.name}
               price={product.price}
