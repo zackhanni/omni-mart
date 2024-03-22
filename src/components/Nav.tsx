@@ -20,7 +20,7 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="flex flex-col fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+    <nav className="flex flex-col fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 to-purple-700 text-white">
       <div className="flex flex-row justify-center space-x-4 items-center h-[88px] font-bold w-full z-30 px-4">
         <div className="">
           <Logo />
