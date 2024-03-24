@@ -15,7 +15,7 @@ export default function Hero() {
             className="w-full h-full"
           />
         </div>
-        <div className="absolute -translate-x-1/2 -translate-y-1/3 top-1/2 lg:top-1/2 left-1/2 text-white space-y-6 text-center w-full">
+        <div className="absolute -translate-x-1/2 -translate-y-1/4 top-1/2 lg:top-1/2 left-1/2 text-white text-center w-full">
           <p className="text-5xl font-bold">CARGO BAY SALE</p>
 
           <div className="flex items-center space-x-2 justify-center">
@@ -29,7 +29,7 @@ export default function Hero() {
           <p className="text-xl">
             SAVE ON FLUX CAPACITORS, POWER CONVERTERS AND MORE!
           </p>
-          <button className="hover:bg-white outline outline-1 hover:outline-white hover:text-black rounded-full px-16 py-4 w-fit mt-2">
+          <button className="hover:bg-white outline outline-1 hover:outline-white hover:text-black rounded-full px-16 py-4 w-fit bg-black/20">
             Shop now
           </button>
         </div>
