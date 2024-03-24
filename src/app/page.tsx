@@ -5,20 +5,18 @@ import Hero from "@/components/Hero";
 import Nav from "@/components/Nav";
 import ProductBlocks from "@/components/ProductBlocks";
 import Spacer from "@/components/Spacer";
-import Image from "next/image";
+import TrendingDeals from "@/components/TrendingDeals";
 
 export default function Home() {
   return (
     <main className="">
       <Nav />
       <Hero />
-      <div className="max-w-screen-2xl mx-auto px-4">
-        <CreditCardAd />
-        <FlashDeals />
-        <Spacer />
-        <ProductBlocks />
-        <CreditCardAd />
-      </div>
+      <TrendingDeals />
+      <CreditCardAd />
+      <FlashDeals />
+      <Spacer />
+      <ProductBlocks />
       <Footer />
     </main>
   );
