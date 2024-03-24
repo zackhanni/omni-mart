@@ -23,22 +23,22 @@ export default function FlashDeals() {
       image: "/product4.webp",
     },
     {
-      name: "Item 5",
+      name: "Item 5 name details thing",
       price: "$19.95",
       image: "/product1.jpg",
     },
   ];
 
   return (
-    <section className="pt-4 pb-4 space-y-8">
-      <div className="flex justify-between">
-        <div>
+    <section className="container py-8">
+      <div className="row">
+        <div className="col-11">
           <h2 className="font-semibold text-2xl">Flash Deals</h2>
           <p>Up to 75% off</p>
         </div>
-        <p className="underline text-sm">view all</p>
+        <p className="underline text-sm col">view all</p>
       </div>
-      <div className="flex space-x-4 overflow-x-scroll ">
+      <div className="row">
         {products.map((product) => {
           return (
             <ProductCardVertical
