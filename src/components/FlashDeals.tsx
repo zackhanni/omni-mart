@@ -38,7 +38,7 @@ export default function FlashDeals() {
         </div>
         <p className="underline text-sm col">view all</p>
       </div>
-      <div className="row">
+      <div className="row row-cols-lg-4 row-cols-2">
         {products.map((product) => {
           return (
             <ProductCardVertical
