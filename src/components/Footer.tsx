@@ -40,8 +40,12 @@ export default function Footer() {
             <h3 className="font-bold">Featured</h3>
             {footerLinks.featured.map((link) => {
               return (
-                <Link key={link.name} href={link.link}>
-                  <p className="hover:underline">{link.name}</p>
+                <Link
+                  key={link.name}
+                  href={link.link}
+                  className="text-white no-underline hover:underline	"
+                >
+                  <p>{link.name}</p>
                 </Link>
               );
             })}
