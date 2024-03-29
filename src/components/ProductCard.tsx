@@ -57,24 +57,24 @@ export function ProductCardVertical(props: ProductCardProps) {
 export function ProductCardHorizontal(props: ProductCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  if (props.description && props.description.length > 100) {
+  if (props.description && props.description.length > 60) {
     props.description =
-      props.description.slice(0, 100 - props.description.length) + "...";
+      props.description.slice(0, 60 - props.description.length) + "...";
   }
 
   return (
     <div className="col-lg-6">
       <div className="row g-0">
-        <div className="col bg-black/5 flex flex-col justify-center">
-          <div className="px-8">
-            <p className="font-semibold text-2xl">{props.name}</p>
+        <div className="col bg-black/5 flex flex-col justify-center ">
+          <div className="px-4">
+            <p className="font-semibold text-xl">{props.name}</p>
             <p className="">{props.description}</p>
             <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-8">
               + Add
             </button>
           </div>
         </div>
-        <div className="col h-64 w-1/2 overflow-hidden">
+        <div className="col overflow-hidden h-64">
           <Image
             src={props.image}
             width={300}
