@@ -10,14 +10,12 @@ import TrendingDeals from "@/components/TrendingDeals";
 export default function Home() {
   return (
     <main className="">
-      <Nav />
       <Hero />
       <TrendingDeals />
       <CreditCardAd />
       <FlashDeals />
       <Spacer />
       <ProductBlocks />
-      <Footer />
     </main>
   );
 }
