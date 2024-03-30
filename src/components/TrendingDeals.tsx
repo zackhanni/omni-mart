@@ -3,7 +3,7 @@ import { productCategory } from "./Products";
 
 export default function TrendingDeals() {
   return (
-    <section className="container py-8">
+    <section className="container py-8 bg-white">
       <div className="row">
         <div className="col-11">
           <h2 className="font-semibold text-2xl">Trending Deals</h2>
