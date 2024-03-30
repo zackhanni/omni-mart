@@ -1,3 +1,12 @@
+# Notes
+
+## Thigns to add
+
+- make footer sticky and replace the nav when user scrolls all the way to the bottom
+
+
+
+
 "From across the cosmos to your doorstep, OmniMart delivers!"
 
 delivery section with ways to get coupons and sign up for the mailing list
