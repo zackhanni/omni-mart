@@ -2,10 +2,7 @@ import React from "react";
 
 export default function Logo() {
   return (
-    <div
-    // class="looka-1gsgdvk"
-    // style="background-color: rgb(61, 132, 168);"
-    >
+    <div>
       <svg
         id="177670670"
         viewBox="0 -5 350 248.05912272135416"
