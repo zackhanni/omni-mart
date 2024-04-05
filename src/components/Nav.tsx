@@ -20,19 +20,23 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="flex flex-col fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-indigo-950 to-purple-700 text-white">
-      <div className="flex flex-row justify-center space-x-4 items-center h-[88px] font-bold w-full px-4">
-        <div className="">
+    <nav className="sticky top-0 w-full z-10 bg-gradient-to-r from-indigo-950 to-purple-700 text-white px-2">
+      {/* top section nav */}
+      <div className="flex flex-row justify-center items-center font-bold w-full px-4 space-x-4 ">
+        <div className="translate-y-1">
           <Logo />
         </div>
-        <p className="hover:bg-purple-800 p-4 rounded-full hidden lg:block">
-          <FontAwesomeIcon icon={faRectangleList} className="pr-2" />
+
+        <li className="hover:bg-purple-800 p-4 rounded-full hidden lg:block mb-0">
+          <FontAwesomeIcon icon={faRectangleList} className="pr-2 text-xl" />
           Departments
-        </p>
-        <p className="hover:bg-purple-800 p-4 rounded-full hidden xl:block">
-          <FontAwesomeIcon icon={faBellConcierge} className="pr-2" />
+        </li>
+
+        <li className="hover:bg-purple-800 p-4 rounded-full hidden xl:block mb-0">
+          <FontAwesomeIcon icon={faBellConcierge} className="pr-2 text-xl" />
           Services
-        </p>
+        </li>
+
         <form className="min-w-[60%] lg:min-w-fit flex">
           <input
             className="rounded-full px-8 py-2 font-normal w-full"
@@ -40,48 +44,60 @@ export default function Nav() {
             name="nav-search"
           ></input>
           <button className="pl-3 pr-1 hover:bg-purple-800 rounded-full text-center">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="pr-2" />
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="pr-2 text-xl"
+            />
           </button>
         </form>
-        <p className="hover:bg-purple-800 p-4 rounded-full hidden lg:block">
-          <FontAwesomeIcon icon={faHeart} className="pr-2" />
+
+        <li className="hover:bg-purple-800 p-4 rounded-full hidden lg:block mb-0">
+          <FontAwesomeIcon icon={faHeart} className="pr-2 text-xl" />
           My Items
-        </p>
+        </li>
+
         <div className="hover:bg-purple-800 p-4 rounded-full hidden lg:flex items-center">
-          <FontAwesomeIcon icon={faUser} className="pr-2" />
+          <FontAwesomeIcon icon={faUser} className="pr-2 text-2xl" />
           <div className="flex flex-col">
             <span className="font-normal text-sm -mb-1">Sign In</span>
             Account
           </div>
         </div>
-        <div className="flex flex-col">
-          <FontAwesomeIcon icon={faCartShopping} />
-          <p className="text-xs font-normal pt-1">$0.00</p>
-        </div>
+
+        <li className="flex flex-col">
+          <FontAwesomeIcon icon={faCartShopping} className="text-xl" />
+          <span className="text-xs font-normal">$0.00</span>
+        </li>
       </div>
-      <hr className="mt-2" />
-      <div className="flex flex-row space-x-6 items-center px-4">
-        <div className="flex">
-          <p className="hidden md:block">Philadelphia, 19148 - </p>
-          <p>Milkyway Supercenter</p>
-        </div>
-        <p className="hidden sm:block">|</p>
-        <p className="lg:hidden sm:block hidden hover:underline font-semibold">
+      <hr className="my-0 hidden md:block" />
+      {/* bottom section nav */}
+      <div className="hidden md:flex items-center h-full space-x-6 pl-4 py-2 text-sm">
+        <li className="list-none flex">
+          <span className="hidden lg:block">Philadelphia, 19148 - </span>
+          Milkyway Supercenter
+        </li>
+
+        <li className="hidden sm:block">|</li>
+        <li className="lg:hidden sm:block hidden hover:underline font-semibold">
           Departments
-        </p>
-        <p className="xl:hidden sm:block hidden hover:underline font-semibold">
+        </li>
+        <li className="xl:hidden sm:block hidden hover:underline font-semibold">
           Services
-        </p>
-        <p className="hidden sm:block hover:underline font-semibold">Deals</p>
-        <p className="hidden lg:block hover:underline font-semibold">Grocery</p>
-        <p className="hidden lg:block hover:underline font-semibold">
+        </li>
+        <li className="hidden sm:block hover:underline font-semibold">Deals</li>
+        <li className="hidden lg:block hover:underline font-semibold">
+          Grocery
+        </li>
+        <li className="hidden md:block hover:underline font-semibold">
           Essentials
-        </p>
-        <p className="hidden lg:block hover:underline font-semibold">Fashion</p>
-        <p className="hidden lg:block hover:underline font-semibold">Ship</p>
-        <p className="hidden lg:block hover:underline font-semibold">
+        </li>
+        <li className="hidden lg:block hover:underline font-semibold">
+          Fashion
+        </li>
+        <li className="hidden md:block hover:underline font-semibold">Ship</li>
+        <li className="hidden lg:block hover:underline font-semibold">
           Electronics
-        </p>
+        </li>
       </div>
     </nav>
   );
