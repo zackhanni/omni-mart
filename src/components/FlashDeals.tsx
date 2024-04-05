@@ -3,7 +3,7 @@ import { productCategory } from "./Products";
 
 export default function FlashDeals() {
   return (
-    <section className="container py-8">
+    <section id="flash_deals" className="container py-8 bg-white">
       <div className="row">
         <div className="col-11">
           <h2 className="font-semibold text-2xl">Flash Deals</h2>
