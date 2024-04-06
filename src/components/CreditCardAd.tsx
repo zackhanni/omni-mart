@@ -7,8 +7,11 @@ export default function CreditCardAd() {
   return (
     <section className="container bg-white">
       <div className="row">
-        <div className=" flex justify-center flex-col sm:flex-row space-y-4 sm:space-y-0 text-center py-5 rounded-md shadow-xl outline outline-black/5 outline-1">
-          <FontAwesomeIcon icon={faCreditCard} className="text-2xl sm:pr-4" />
+        <div className=" flex justify-center items-center flex-col md:flex-row space-y-4 sm:space-y-0 text-center py-5 rounded-md shadow-xl outline outline-black/5 outline-1">
+          <FontAwesomeIcon
+            icon={faCreditCard}
+            className="text-2xl sm:pr-4 hidden md:block"
+          />
           <div>
             <span>Earn 5% cash back.</span> See if you&apos;re pre-approved with
             no credit risk.
