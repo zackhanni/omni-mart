@@ -28,9 +28,9 @@ export default function Footer() {
   };
 
   const contact = {
-    address: "123 Main St, Philadelphia, PA",
-    phone: "1-800-1234",
-    email: "email@email.com",
+    address: "Andromeda Galaxy",
+    phone: "1-800-867-5309",
+    email: "info@omnimart.com",
   };
 
   return (
@@ -42,32 +42,38 @@ export default function Footer() {
         </button>
       </div>
       <div className="container text-white">
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 py-8">
+        <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 py-8">
+          {/* logo */}
           <div className="col">
             <Logo />
           </div>
+          {/* featured */}
           <div className="col">
             <h3 className="font-bold">Featured</h3>
-            {footerLinks.featured.map((link) => {
-              return (
-                <Link
-                  key={link.name}
-                  href={link.link}
-                  className="text-white no-underline hover:underline	"
-                >
-                  <p>{link.name}</p>
-                </Link>
-              );
-            })}
+            <div className="flex flex-col">
+              {footerLinks.featured.map((link) => {
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.link}
+                    className="text-white no-underline hover:underline	"
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-
+          {/* address */}
           <div className="col">
             <h3 className="font-bold">Contact us</h3>
-            <p>{contact.address}</p>
-            <p>{contact.phone}</p>
-            <p>{contact.email}</p>
+            <ul className="list-none">
+              <li>{contact.address}</li>
+              <li>{contact.phone}</li>
+              <li>{contact.email}</li>
+            </ul>
           </div>
-
+          {/* instagram images */}
           <div className="col">
             <h3 className="font-bold">Instagram</h3>
             <div className="row row-cols-2 g-4">
@@ -81,20 +87,21 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="row py-8">
-          {footerLinks.socials.map((social) => {
-            return (
-              <div key={social.name} className="col">
-                <FontAwesomeIcon
-                  className="text-4xl hover:text-orange-500"
-                  icon={social.icon}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className="row -mb-2">
-          <p className="col text-xs py-8">
+        {/* sub footer */}
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex space-x-4">
+            {footerLinks.socials.map((social) => {
+              return (
+                <div key={social.name} className="">
+                  <FontAwesomeIcon
+                    className="text-4xl hover:text-orange-500"
+                    icon={social.icon}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <p className=" text-center text-xs py-8">
             2024 OmniMart. All rights reserved.
           </p>
         </div>
