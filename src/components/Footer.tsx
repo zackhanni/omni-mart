@@ -55,7 +55,10 @@ export default function Footer() {
         <div className="row">
           {/* logo and info */}
           <div className="col-lg-3 mb-4">
-            <Logo />
+            <div className="pb-2">
+              <Logo />
+            </div>
+
             <p className="">
               We are a celestial emporium where the wonders of the universe come
               together for the ultimate shopping experience.
