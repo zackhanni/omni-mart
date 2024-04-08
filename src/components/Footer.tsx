@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Logo from "./Logo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRebel } from "@fortawesome/free-brands-svg-icons";
@@ -33,6 +34,15 @@ export default function Footer() {
     email: "info@omnimart.com",
   };
 
+  const instagramImageLinks = [
+    "/instagram-images/inst1.jpg",
+    "/instagram-images/inst2.jpg",
+    "/instagram-images/inst3.jpg",
+    "/instagram-images/inst4.jpg",
+    "/instagram-images/inst5.jpg",
+    "/instagram-images/inst6.jpg",
+  ];
+
   return (
     <footer className="bg-gradient-to-r from-indigo-950 to-purple-700">
       <div className="flex flex-col items-center bg-purple-300 py-8 space-y-4 text-center">
@@ -41,69 +51,74 @@ export default function Footer() {
           Give feedback
         </button>
       </div>
-      <div className="container text-white">
-        <div className="row row-cols-2 row-cols-md-2 row-cols-lg-4 py-8">
-          {/* logo */}
-          <div className="col">
+      <div className="container pt-20 pb-16 text-white">
+        <div className="row">
+          {/* logo and info */}
+          <div className="col-lg-3 mb-4">
             <Logo />
-          </div>
-          {/* featured */}
-          <div className="col">
-            <h3 className="font-bold">Featured</h3>
-            <div className="flex flex-col">
-              {footerLinks.featured.map((link) => {
+            <p className="">
+              We are a celestial emporium where the wonders of the universe come
+              together for the ultimate shopping experience.
+            </p>
+            {/* <div className="flex space-x-4">
+              {footerLinks.socials.map((social) => {
                 return (
-                  <Link
-                    key={link.name}
-                    href={link.link}
-                    className="text-white no-underline hover:underline	"
-                  >
-                    {link.name}
-                  </Link>
+                  <div key={social.name} className="">
+                    <FontAwesomeIcon
+                      className="text-4xl hover:text-orange-500"
+                      icon={social.icon}
+                    />
+                  </div>
                 );
               })}
-            </div>
+            </div> */}
+            <p className="">2024 OmniMart. All rights reserved.</p>
           </div>
-          {/* address */}
-          <div className="col">
+          {/* featured */}
+          <div className="offset-lg-1 col-6 col-lg-2 mb-4">
+            <h3 className="font-bold">Featured</h3>
+            <ul className="flex flex-col list-unstyled space-y-2">
+              {footerLinks.featured.map((link) => {
+                return (
+                  <li key={link.name}>
+                    <Link
+                      href={link.link}
+                      className="text-white no-underline hover:underline"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          {/* contact us */}
+          <div className="col-6 col-lg-2 mb-4">
             <h3 className="font-bold">Contact us</h3>
-            <ul className="list-none">
+            <ul className="list-unstyled space-y-2">
               <li>{contact.address}</li>
               <li>{contact.phone}</li>
               <li>{contact.email}</li>
             </ul>
           </div>
           {/* instagram images */}
-          <div className="col">
+          <div className="offset-lg-1 col-6 col-lg-3 mb-4">
             <h3 className="font-bold">Instagram</h3>
-            <div className="row row-cols-2 g-4">
-              {footerLinks.socials.map((link) => {
+            <div className="row row-cols-3 gy-4 ">
+              {instagramImageLinks.map((link) => {
                 return (
-                  <div key={link.name} className="">
-                    <FontAwesomeIcon className="text-2xl" icon={link.icon} />
-                  </div>
+                  <Image
+                    key={link}
+                    src={link}
+                    width={80}
+                    height={80}
+                    alt={`Instagram picture ${link}`}
+                    className="object-fit-cover w-[80px] h-[80px] "
+                  />
                 );
               })}
             </div>
           </div>
-        </div>
-        {/* sub footer */}
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex space-x-4">
-            {footerLinks.socials.map((social) => {
-              return (
-                <div key={social.name} className="">
-                  <FontAwesomeIcon
-                    className="text-4xl hover:text-orange-500"
-                    icon={social.icon}
-                  />
-                </div>
-              );
-            })}
-          </div>
-          <p className=" text-center text-xs py-8">
-            2024 OmniMart. All rights reserved.
-          </p>
         </div>
       </div>
     </footer>
