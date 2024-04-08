@@ -65,16 +65,16 @@ export function ProductCardHorizontal(props: ProductCardProps) {
   return (
     <div className="col-lg-6">
       <div className="row g-0">
-        <div className="col bg-black/5 flex flex-col justify-center ">
-          <div className="px-4">
+        <div className="col bg-black/5 flex flex-col justify-center">
+          <div className="px-2 sm:px-4 ">
             <p className="font-semibold text-xl">{props.name}</p>
-            <p className="">{props.description}</p>
-            <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-8">
-              + Add
+            <p className="hidden sm:block">{props.description}</p>
+            <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-6">
+              See deals
             </button>
           </div>
         </div>
-        <div className="col overflow-hidden h-64">
+        <div className="col overflow-hidden sm:h-64">
           <Image
             src={props.image}
             width={300}
