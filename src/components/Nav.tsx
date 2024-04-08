@@ -57,7 +57,7 @@ export default function Nav() {
         </li>
 
         <div className="hover:bg-purple-800 p-4 rounded-full hidden lg:flex items-center">
-          <FontAwesomeIcon icon={faUser} className="pr-2 text-2xl" />
+          <FontAwesomeIcon icon={faUser} className="pr-2 text-xl" />
           <div className="flex flex-col">
             <span className="font-normal text-sm -mb-1">Sign In</span>
             Account
