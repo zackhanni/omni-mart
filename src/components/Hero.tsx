@@ -29,7 +29,7 @@ export default function Hero() {
           <p className="sm:text-xl">
             SAVE ON FLUX CAPACITORS, POWER CONVERTERS AND MORE!
           </p>
-          <div className="gap-2 grid sm:flex justify-content-center sm:h-[72px]">
+          <div className="gap-4 grid sm:flex justify-content-center sm:h-[72px]">
             <button className="hover:bg-white outline outline-1 hover:outline-white hover:text-black rounded-full sm:px-16 px-8 sm:py-4 py-2 bg-black/20">
               Shop now
             </button>
