@@ -5,11 +5,16 @@ export default function TrendingDeals() {
   return (
     <section className="container py-8 bg-white">
       <div className="row">
-        <div className="col-11">
+        <div className="col-10">
           <h2 className="font-semibold text-2xl">Trending Deals</h2>
           <p>Navigation systems and star charts</p>
         </div>
-        <p className="col underline text-sm">view all</p>
+        <a
+          href="/"
+          className="offset-lg-1 col-2 col-lg-1 underline text-sm text-black"
+        >
+          view all
+        </a>
       </div>
 
       <div className="row row-cols-lg-2 g-4">
