@@ -44,13 +44,25 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-gradient-to-r from-indigo-950 to-purple-700">
-      <div className="flex flex-col items-center bg-purple-300 py-8 space-y-4 text-center">
-        <p className="">We&apos;d love to year what you think!</p>
-        <button className="font-bold outline outline-1 rounded-full py-2 px-4 bg-white">
-          Give feedback
-        </button>
+    <footer className="bg-gradient-to-r from-indigo-950 to-purple-700 relative">
+      <div className="bg-cover bg-fixed flex flex-col items-center space-y-4 text-center overflow-hidden h-32 bg-[url('/purple-wave.jpeg')]">
+        {/* <Image
+          src="/purple-wave.jpeg"
+          width={1920}
+          height={1080}
+          priority
+          alt="Outer space galaxy"
+          className="w-full object-cover h-32 fixed brightness-[.6]"
+        /> */}
+        <div className="z-10 py-8">
+          <p className="text-white">We&apos;d love to year what you think!</p>
+          <button className="font-bold outline outline-1 rounded-full py-2 px-4 bg-white">
+            Give feedback
+          </button>
+        </div>
       </div>
+
+      {/* main footer section */}
       <div className="container pt-20 pb-16 text-white">
         <div className="row">
           {/* logo and info */}
