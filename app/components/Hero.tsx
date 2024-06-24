@@ -26,7 +26,7 @@ export default function Hero() {
             <p className=" text-6xl sm:text-9xl">34% OFF</p>
           </div>
 
-          <p className="sm:text-xl">
+          <p className="sm:text-xl px-16">
             SAVE ON FLUX CAPACITORS, POWER CONVERTERS AND MORE!
           </p>
           <div className="gap-4 grid sm:flex justify-content-center sm:h-[72px]">
