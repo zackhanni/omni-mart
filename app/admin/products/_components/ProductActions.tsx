@@ -1,6 +1,6 @@
 "use client";
 
-import { DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { DropdownMenuItem } from "@/app/components/ui/dropdown-menu";
 import React, { useTransition } from "react";
 import {
   deleteProduct,
@@ -38,6 +38,7 @@ export function DeleteDropdownItem({
   const [isPending, startTransition] = useTransition();
   return (
     <DropdownMenuItem
+      variant="destructive"
       disabled={disabled || isPending}
       onClick={() =>
         startTransition(async () => {
