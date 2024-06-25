@@ -94,7 +94,7 @@ export default async function AdminDashboard() {
         subtitle={`${formatNumber(
           productData.inactiveCount
         )} Inactive Products`}
-        body={`${formatNumber(productData.activeCount)} Active Users`}
+        body={`${formatNumber(productData.activeCount)} Active Products`}
       />
     </div>
   );
