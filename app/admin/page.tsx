@@ -15,6 +15,9 @@ const getSalesData = async () => {
     _count: true, //count number of rows
   });
 
+  // test for loading wheel
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return {
     amount: (data._sum.pricePaidInCents || 0) / 100, //divide to get dollar amount
     numberOfSales: data._count,
