@@ -45,15 +45,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-r from-indigo-950 to-purple-700 relative">
-      <div className="bg-cover bg-fixed flex flex-col items-center space-y-4 text-center overflow-hidden h-32 bg-[url('/purple-wave.jpeg')]">
-        {/* <Image
-          src="/purple-wave.jpeg"
-          width={1920}
-          height={1080}
-          priority
-          alt="Outer space galaxy"
-          className="w-full object-cover h-32 fixed brightness-[.6]"
-        /> */}
+      <div className="bg-cover bg-fixed flex flex-col items-center space-y-4 text-center overflow-hidden h-40 bg-[url('/purple-wave.jpeg')] opacity-50">
         <div className="z-10 py-8">
           <p className="text-white">We&apos;d love to year what you think!</p>
           <button className="font-bold outline outline-1 rounded-full py-2 px-4 bg-white">
@@ -119,16 +111,16 @@ export default function Footer() {
           {/* instagram images */}
           <div className="offset-lg-1 col-6 col-lg-3 mb-4">
             <h3 className="font-bold">Instagram</h3>
-            <div className="row row-cols-3 gy-4 ">
+            <div className="row row-cols-3 gy-4">
               {instagramImageLinks.map((link) => {
                 return (
                   <Image
                     key={link}
                     src={link}
-                    width={80}
-                    height={80}
+                    width={70}
+                    height={70}
                     alt={`Instagram picture ${link}`}
-                    className="object-fit-cover w-[80px] h-[80px] "
+                    className="object-cover size-[70px] hover:scale-105 duration-300 "
                   />
                 );
               })}
