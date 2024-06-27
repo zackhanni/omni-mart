@@ -45,7 +45,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-r from-indigo-950 to-purple-700 relative">
-      <div className="bg-cover bg-fixed flex flex-col items-center space-y-4 text-center overflow-hidden h-40 bg-[url('/purple-wave.jpeg')] opacity-50">
+      <div className="bg-cover bg-fixed flex flex-col items-center space-y-4 text-center overflow-hidden h-40 bg-[url('/purple-wave.jpeg')]">
         <div className="z-10 py-8">
           <p className="text-white">We&apos;d love to year what you think!</p>
           <button className="font-bold outline outline-1 rounded-full py-2 px-4 bg-white">
