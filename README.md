@@ -8,7 +8,7 @@ https://www.prisma.io/docs/getting-started/quickstart
 
 https://ui.shadcn.com/docs/installation/next
 
-## backend setup - prisma, stripe, sqlite
+## full stack ecommerce store with admin - next.js, prisma, stripe, sqlite
 
 https://www.youtube.com/watch?v=iqrgggs0Qk0
 
