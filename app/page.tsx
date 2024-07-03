@@ -6,7 +6,6 @@ import Nav from "./components/Nav";
 import NewestProducts from "./components/NewestProducts";
 import ProductBlocks from "./components/ProductBlocks";
 import Spacer from "./components/Spacer";
-import TrendingDeals from "./components/TrendingDeals";
 import "bootstrap/dist/css/bootstrap.css"; // importing bootstrap here because it messes up backend admin page if on layout
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <main>
         <Hero />
         <NewestProducts />
-        <TrendingDeals />
         <CreditCardAd />
         <FlashDeals />
         <Spacer />

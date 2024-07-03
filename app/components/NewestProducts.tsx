@@ -1,5 +1,5 @@
 import db from "@/db/db";
-import { ProductCard, ProductCardHorizontal } from "./ProductCard";
+import { ProductCardHorizontal } from "./ProductCard";
 import { Product } from "@prisma/client";
 // import { productCategory } from "./Products";
 
@@ -50,9 +50,9 @@ const ProductGridSection = async ({
   title,
 }: ProductGridSectionProps) => {
   return (
-    <div className="row row-cols-lg-2 g-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
       {(await productsFetcher()).map((product) => (
-        <ProductCard key={product.id} {...product} />
+        <ProductCardHorizontal key={product.id} {...product} />
       ))}
     </div>
   );

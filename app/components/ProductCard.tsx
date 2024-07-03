@@ -65,39 +65,39 @@ export function ProductCardVertical(props: ProductCardProps) {
 //
 //
 
-export function ProductCardHorizontal(props: ProductCardProps) {
-  const [isFavorite, setIsFavorite] = useState(false);
+// export function ProductCardHorizontal(props: ProductCardProps) {
+//   const [isFavorite, setIsFavorite] = useState(false);
 
-  if (props.description && props.description.length > 60) {
-    props.description =
-      props.description.slice(0, 60 - props.description.length) + "...";
-  }
+//   if (props.description && props.description.length > 60) {
+//     props.description =
+//       props.description.slice(0, 60 - props.description.length) + "...";
+//   }
 
-  return (
-    <div className="col-lg-6">
-      <div className="row g-0">
-        <div className="col bg-black/5 flex flex-col justify-center">
-          <div className="px-8 ">
-            <p className="font-semibold text-xl">{props.name}</p>
-            <p className="hidden sm:block">{props.description}</p>
-            <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-6">
-              See deals
-            </button>
-          </div>
-        </div>
-        <div className="col overflow-hidden sm:h-64">
-          <Image
-            src={props.image}
-            width={300}
-            height={500}
-            alt="Picture of the product"
-            className="object-fit"
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="col-lg-6">
+//       <div className="row g-0">
+//         <div className="col bg-black/5 flex flex-col justify-center">
+//           <div className="px-8 ">
+//             <p className="font-semibold text-xl">{props.name}</p>
+//             <p className="hidden sm:block">{props.description}</p>
+//             <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-6">
+//               See deals
+//             </button>
+//           </div>
+//         </div>
+//         <div className="col overflow-hidden sm:h-64">
+//           <Image
+//             src={props.image}
+//             width={300}
+//             height={500}
+//             alt="Picture of the product"
+//             className="object-fit"
+//           />
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
 //
 //
@@ -111,7 +111,7 @@ type NewProductCardProps = {
   imagePath: string;
 };
 
-export function ProductCard({
+export function ProductCardHorizontal({
   id,
   name,
   priceInCents,
@@ -119,22 +119,31 @@ export function ProductCard({
   imagePath,
 }: NewProductCardProps) {
   return (
-    <Card className="flex overflow-hidden flex-col">
-      <div className="relative w-full h-auto aspect-video">
-        <Image src={imagePath} fill alt={name} />
+    <Card className="flex overflow-hidden shadow-none rounded-none">
+      <div className="w-1/2 bg-gray-100">
+        <CardHeader className="!pb-3">
+          <CardTitle className="mb-0">{name}</CardTitle>
+          <CardDescription className="mt-0">
+            {formatCurrency(priceInCents / 100)}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow !pb-3">
+          <p className="line-clamp-3 mb-0">{description}</p>
+        </CardContent>
+        <CardFooter>
+          <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-6">
+            <Link
+              href={`/products/${id}/purchase`}
+              className="no-underline text-black"
+            >
+              Purchase
+            </Link>
+          </button>
+        </CardFooter>
       </div>
-      <CardHeader>
-        <CardTitle>{name}</CardTitle>
-        <CardDescription>{formatCurrency(priceInCents / 100)}</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-grow">
-        <p className="line-clamp-4">{description}</p>
-      </CardContent>
-      <CardFooter>
-        <Button asChild size="lg" className="w-full">
-          <Link href={`/products/${id}/purchase`}>Purchase</Link>
-        </Button>
-      </CardFooter>
+      <div className="relative w-1/2 h-64">
+        <Image src={imagePath} fill alt={name} className="object-cover" />
+      </div>
     </Card>
   );
 }
