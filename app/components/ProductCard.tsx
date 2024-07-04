@@ -120,3 +120,34 @@ export function ProductCardHorizontal({
     </Card>
   );
 }
+
+export function ProductCardHorizontalSkeleton() {
+  return (
+    <Card className="flex overflow-hidden shadow-none rounded-none animate-pulse">
+      <div className="w-1/2 bg-gray-100">
+        <CardHeader className="!pb-3">
+          <CardTitle className="mb-0">
+            <div className="w-3/4 h-6 rounded-full bg-gray-300" />
+          </CardTitle>
+          <CardDescription>
+            <div className="w-1/4 h-4 rounded-full bg-gray-300" />
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="">
+          <p className="w-full h-4 rounded-full bg-gray-300" />
+          <p className="w-full h-4 rounded-full bg-gray-300" />
+          <p className="w-3/4 h-4 rounded-full bg-gray-300" />
+        </CardContent>
+        <CardFooter>
+          <button
+            disabled
+            className="bg-gray-300 rounded-full py-1 px-6 text-transparent"
+          >
+            Purchase
+          </button>
+        </CardFooter>
+      </div>
+      <div className="relative w-1/2 h-full bg-gray-300"></div>
+    </Card>
+  );
+}

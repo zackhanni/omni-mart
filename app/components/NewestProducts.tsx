@@ -1,6 +1,10 @@
 import db from "@/db/db";
-import { ProductCardHorizontal } from "./ProductCard";
+import {
+  ProductCardHorizontal,
+  ProductCardHorizontalSkeleton,
+} from "./ProductCard";
 import { Product } from "@prisma/client";
+import { Suspense } from "react";
 
 const getMostPopularProducts = () => {
   return db.product.findMany({
@@ -10,7 +14,13 @@ const getMostPopularProducts = () => {
   });
 };
 
+const wait = (duration: number) => {
+  // test suspense loading
+  return new Promise((resolve) => setTimeout(resolve, duration));
+};
+
 const getNewestProducts = () => {
+  // await wait(2000);
   return db.product.findMany({
     where: { isAvailableForPurchase: true },
     orderBy: { createdAt: "desc" },
@@ -50,9 +60,28 @@ const ProductGridSection = async ({
 }: ProductGridSectionProps) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-      {(await productsFetcher()).map((product) => (
-        <ProductCardHorizontal key={product.id} {...product} />
-      ))}
+      <Suspense
+        fallback={
+          <>
+            <ProductCardHorizontalSkeleton />
+            <ProductCardHorizontalSkeleton />
+            <ProductCardHorizontalSkeleton />
+            <ProductCardHorizontalSkeleton />
+          </>
+        }
+      >
+        <ProductSuspense productsFetcher={productsFetcher} />
+      </Suspense>
     </div>
   );
 };
+
+async function ProductSuspense({
+  productsFetcher,
+}: {
+  productsFetcher: () => Promise<Product[]>;
+}) {
+  return (await productsFetcher()).map((product) => (
+    <ProductCardHorizontal key={product.id} {...product} />
+  ));
+}

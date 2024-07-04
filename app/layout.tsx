@@ -25,9 +25,7 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        {/* <Nav /> */}
         {children}
-        {/* <Footer /> */}
       </body>
     </html>
   );
