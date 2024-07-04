@@ -23,7 +23,7 @@ export default function Hero() {
               UP
               <br /> TO
             </p>
-            <p className=" text-6xl sm:text-9xl">34% OFF</p>
+            <p className=" text-6xl sm:text-9xl">42% OFF</p>
           </div>
 
           <p className="sm:text-xl px-16">
