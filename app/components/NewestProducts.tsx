@@ -1,7 +1,6 @@
 import db from "@/db/db";
 import { ProductCardHorizontal } from "./ProductCard";
 import { Product } from "@prisma/client";
-// import { productCategory } from "./Products";
 
 const getMostPopularProducts = () => {
   return db.product.findMany({
@@ -50,7 +49,7 @@ const ProductGridSection = async ({
   title,
 }: ProductGridSectionProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
       {(await productsFetcher()).map((product) => (
         <ProductCardHorizontal key={product.id} {...product} />
       ))}

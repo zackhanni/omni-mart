@@ -1,5 +1,23 @@
+import db from "@/db/db";
 import { ProductCardVertical } from "./ProductCard";
 import { productCategory } from "./Products";
+import { Product } from "@prisma/client";
+
+const getMostPopularProducts = () => {
+  return db.product.findMany({
+    where: { isAvailableForPurchase: true },
+    orderBy: { orders: { _count: "desc" } },
+    take: 6,
+  });
+};
+
+const getNewestProducts = () => {
+  return db.product.findMany({
+    where: { isAvailableForPurchase: true },
+    orderBy: { createdAt: "desc" },
+    take: 6,
+  });
+};
 
 export default function FlashDeals() {
   return (
@@ -16,7 +34,7 @@ export default function FlashDeals() {
           view all
         </a>
       </div>
-      <div className="row row-cols-lg-4 row-cols-2">
+      {/* <div className="row row-cols-lg-4 row-cols-2">
         {productCategory.map((product) => {
           return (
             <ProductCardVertical
@@ -27,7 +45,26 @@ export default function FlashDeals() {
             />
           );
         })}
-      </div>
+      </div> */}
+      <ProductGridSection productsFetcher={getNewestProducts} />
     </section>
   );
 }
+
+type ProductGridSectionProps = {
+  title?: string;
+  productsFetcher: () => Promise<Product[]>;
+};
+
+const ProductGridSection = async ({
+  productsFetcher,
+  title,
+}: ProductGridSectionProps) => {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  gap-4">
+      {(await productsFetcher()).map((product) => (
+        <ProductCardVertical key={product.id} {...product} />
+      ))}
+    </div>
+  );
+};

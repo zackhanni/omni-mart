@@ -24,40 +24,92 @@ interface ProductCardProps {
   description?: string;
 }
 
-export function ProductCardVertical(props: ProductCardProps) {
+// export function ProductCardVertical(props: ProductCardProps) {
+//   const [isFavorite, setIsFavorite] = useState(false);
+
+//   if (props.name.length > 45) {
+//     props.name = props.name.slice(0, 45 - props.name.length) + "...";
+//   }
+
+//   return (
+//     <div className="col relative">
+//       <div className="top-2 right-6 absolute text-xl">
+//         <FontAwesomeIcon
+//           icon={isFavorite ? faSolidHeart : faHeart}
+//           onClick={() => setIsFavorite(!isFavorite)}
+//         />
+//       </div>
+
+//       <div className="w-full h-[50%]">
+//         <Image
+//           src={props.image}
+//           width={300}
+//           height={500}
+//           alt="Picture of the product"
+//           className="w-full object-cover h-full"
+//         />
+//       </div>
+
+//       <div className="flex flex-col px-2 py-2">
+//         <p className="font-bold">{props.price}</p>
+//         <p className="">{props.name}</p>
+//         <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-8 w-fit">
+//           + Add
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+
+export function ProductCardVertical({
+  id,
+  name,
+  priceInCents,
+  description,
+  imagePath,
+}: NewProductCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
 
-  if (props.name.length > 45) {
-    props.name = props.name.slice(0, 45 - props.name.length) + "...";
-  }
-
   return (
-    <div className="col relative">
-      <div className="top-2 right-6 absolute text-xl">
+    <Card className="shadow-none border-white relative">
+      {/* <div className="top-2 right-6 absolute text-xl z-10">
         <FontAwesomeIcon
           icon={isFavorite ? faSolidHeart : faHeart}
           onClick={() => setIsFavorite(!isFavorite)}
         />
-      </div>
+      </div> */}
 
-      <div className="w-full h-[50%]">
+      <div className="w-full h-56 relative">
         <Image
-          src={props.image}
-          width={300}
-          height={500}
-          alt="Picture of the product"
+          src={imagePath}
+          fill
+          alt={name}
           className="w-full object-cover h-full"
         />
       </div>
 
-      <div className="flex flex-col px-2 py-2">
-        <p className="font-bold">{props.price}</p>
-        <p className="">{props.name}</p>
-        <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-8 w-fit">
-          + Add
-        </button>
+      <div className="flex flex-col">
+        <CardHeader className="px-0 pb-2">
+          <CardTitle className="mb-0 text-lg">{name}</CardTitle>
+          <CardDescription className="font-bold">
+            {formatCurrency(priceInCents / 100)}
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="flex-grow px-0">
+          <p className="line-clamp-3 mb-0">{description}</p>
+        </CardContent>
+        <CardFooter className="px-0">
+          <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-8 w-fit">
+            <Link
+              href={`/products/${id}/purchase`}
+              className="no-underline text-black"
+            >
+              + Add
+            </Link>
+          </button>
+        </CardFooter>
       </div>
-    </div>
+    </Card>
   );
 }
 
@@ -123,14 +175,14 @@ export function ProductCardHorizontal({
       <div className="w-1/2 bg-gray-100">
         <CardHeader className="!pb-3">
           <CardTitle className="mb-0">{name}</CardTitle>
-          <CardDescription className="mt-0">
+          <CardDescription>
             {formatCurrency(priceInCents / 100)}
           </CardDescription>
         </CardHeader>
-        <CardContent className="flex-grow !pb-3">
+        <CardContent className="flex-grow">
           <p className="line-clamp-3 mb-0">{description}</p>
         </CardContent>
-        <CardFooter>
+        <CardFooter className="">
           <button className="outline outline-1 hover:outline-2 rounded-full py-2 px-6">
             <Link
               href={`/products/${id}/purchase`}
@@ -141,7 +193,7 @@ export function ProductCardHorizontal({
           </button>
         </CardFooter>
       </div>
-      <div className="relative w-1/2 h-64">
+      <div className="relative w-1/2 h-full">
         <Image src={imagePath} fill alt={name} className="object-cover" />
       </div>
     </Card>
