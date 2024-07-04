@@ -10,13 +10,13 @@ export default function CreditCardAd() {
         <div className=" flex justify-center items-center flex-col md:flex-row space-y-4 sm:space-y-0 text-center py-5 rounded-md shadow-xl outline outline-black/5 outline-1">
           <FontAwesomeIcon
             icon={faCreditCard}
-            className="text-2xl sm:pr-4 hidden md:block"
+            className="w-5 h-auto hidden md:block"
           />
-          <div>
-            <span>Earn 5% cash back.</span> See if you&apos;re pre-approved with
-            no credit risk.
+          <div className="sm:ml-4 sm:mr-3">
+            Earn 5% cash back. See if you&apos;re pre-approved with no credit
+            risk.
           </div>
-          <Link href="/" className="underline text-sm sm:ml-4">
+          <Link href="/" className="underline text-sm">
             Learn how
           </Link>
         </div>
