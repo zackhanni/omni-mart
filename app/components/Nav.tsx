@@ -1,10 +1,5 @@
+import { faUser } from "@fortawesome/free-regular-svg-icons";
 import {
-  faHeart,
-  faRectangleList,
-  faUser,
-} from "@fortawesome/free-regular-svg-icons";
-import {
-  faBellConcierge,
   faCartShopping,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
@@ -21,72 +16,41 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="sticky top-0 w-full z-10 bg-gradient-to-r from-indigo-950 to-purple-700 text-white px-2">
+    <nav className="sticky top-0 w-full z-10 bg-gradient-to-r from-indigo-950 to-purple-700 text-white">
       {/* top section nav */}
-      <div className="flex flex-row justify-center items-center font-bold w-full px-4 space-x-4 ">
+      <div className="flex flex-row justify-between items-center font-bold w-full px-4 space-x-4">
         <Link href="/" className="translate-y-1">
           <Logo />
         </Link>
-
-        <Link
-          href="/"
-          className="no-underline text-white hover:underline p-4 rounded-full hidden lg:block mb-0"
-        >
-          <FontAwesomeIcon
-            icon={faRectangleList}
-            className="pr-2 w-[22.5px] h-[17.5px]"
-          />
-          Departments
-        </Link>
-
-        <Link
-          href="/"
-          className="no-underline text-white hover:underline p-4 rounded-full hidden xl:block mb-0"
-        >
-          <FontAwesomeIcon
-            icon={faBellConcierge}
-            className="pr-2 w-[20px] h-[15px]"
-          />
-          Products
-        </Link>
-
-        <form className="min-w-[60%] lg:min-w-fit flex">
+        <form className="flex py-3 md:min-w-[60%]">
           <input
-            className="rounded-full px-8 py-2 font-normal w-full"
+            className="rounded-full px-8 py-2.5 font-normal w-full"
             placeholder="Search OmniMart"
             name="nav-search"
           ></input>
           <button className="pl-3 pr-1 hover:underline rounded-full text-center">
-            <FontAwesomeIcon icon={faMagnifyingGlass} className="pr-2 size-5" />
+            <FontAwesomeIcon icon={faMagnifyingGlass} className="size-5" />
           </button>
         </form>
-
-        <Link
-          href="/"
-          className="no-underline text-white hover:underline p-4 rounded-full hidden lg:block mb-0"
-        >
-          <FontAwesomeIcon
-            icon={faHeart}
-            className="pr-2 w-[20px] h-[17.08px]"
-          />
-          My Items
-        </Link>
-
-        <div className="no-underline text-white hover:underline p-4 rounded-full hidden lg:flex items-center">
-          <FontAwesomeIcon icon={faUser} className="pr-2 w-[17.5px] h-[20px]" />
-          <div className="flex flex-col">
-            <span className="font-normal text-sm -mb-1">Sign In</span>
-            Account
+        <div className="flex items-center space-x-8">
+          <div className="no-underline text-white hover:underline rounded-full items-center flex flex-row">
+            <FontAwesomeIcon icon={faUser} className="w-[17px] h-auto" />
+            <div className="pl-2 flex flex-col">
+              <span className="font-normal text-sm -mb-1">Sign In</span>
+              Account
+            </div>
           </div>
+          <Link
+            href="/"
+            className="no-underline text-white flex flex-col items-center space-y-0.5"
+          >
+            <FontAwesomeIcon
+              icon={faCartShopping}
+              className="w-[20px] h-auto"
+            />
+            <span className="text-xs font-normal">$0.00</span>
+          </Link>
         </div>
-
-        <Link href="/" className="no-underline text-white flex flex-col">
-          <FontAwesomeIcon
-            icon={faCartShopping}
-            className="w-[22.31px] h-[20px]"
-          />
-          <span className="text-xs font-normal">$0.00</span>
-        </Link>
       </div>
       <hr className="my-0 hidden md:block" />
       {/* bottom section - subnav */}
