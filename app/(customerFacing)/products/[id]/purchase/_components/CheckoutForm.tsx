@@ -24,6 +24,7 @@ import { FormEvent, useState } from "react";
 
 type CheckoutFormProps = {
   product: {
+    id: string;
     imagePath: string;
     name: string;
     priceInCents: number;
