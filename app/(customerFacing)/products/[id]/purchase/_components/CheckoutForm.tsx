@@ -1,5 +1,6 @@
 "use client";
 
+import { userOrderExists } from "@/app/actions/orders";
 import { Button } from "@/app/components/ui/button";
 import {
   Card,
@@ -57,26 +58,41 @@ export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
           </div>
         </div>
         <Elements options={{ clientSecret }} stripe={stripePromise}>
-          <Form priceInCents={product.priceInCents} />
+          <Form priceInCents={product.priceInCents} productId={product.id} />
         </Elements>
       </div>
     </>
   );
 }
 
-function Form({ priceInCents }: { priceInCents: number }) {
+function Form({
+  priceInCents,
+  productId,
+}: {
+  priceInCents: number;
+  productId: string;
+}) {
   const stripe = useStripe();
   const elements = useElements();
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string>();
+  const [email, setEmail] = useState<string>();
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    if (stripe == null || elements == null) return;
+    if (stripe == null || elements == null || email == null) return;
+
     setIsLoading(true);
 
-    // check for existing order
+    const orderExists = await userOrderExists(email, productId);
+    if (orderExists) {
+      setErrorMessage(
+        "You have already purchased this product. Ty downloading it from the 'My Orders' page."
+      );
+      setIsLoading(false);
+      return;
+    }
 
     stripe
       .confirmPayment({
@@ -110,7 +126,9 @@ function Form({ priceInCents }: { priceInCents: number }) {
           {/* the actual stripe payment section here */}
           <PaymentElement />
           <div className="mt-4">
-            <LinkAuthenticationElement />
+            <LinkAuthenticationElement
+              onChange={(e) => setEmail(e.value.email)}
+            />
           </div>
         </CardContent>
         <CardFooter>
