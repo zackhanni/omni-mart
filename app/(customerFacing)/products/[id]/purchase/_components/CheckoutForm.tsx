@@ -12,6 +12,7 @@ import {
 import { formatCurrency } from "@/lib/formatters";
 import {
   Elements,
+  LinkAuthenticationElement,
   PaymentElement,
   useElements,
   useStripe,
@@ -67,6 +68,7 @@ function Form({ priceInCents }: { priceInCents: number }) {
   const stripe = useStripe();
   const elements = useElements();
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string>();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -75,6 +77,22 @@ function Form({ priceInCents }: { priceInCents: number }) {
     setIsLoading(true);
 
     // check for existing order
+
+    stripe
+      .confirmPayment({
+        elements,
+        confirmParams: {
+          return_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/stripe/purchase-success`,
+        },
+      })
+      .then(({ error }) => {
+        if (error.type === "card_error" || error.type === "validation_error") {
+          setErrorMessage(error.message);
+        } else {
+          setErrorMessage("AN unknown error occurred");
+        }
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -82,11 +100,18 @@ function Form({ priceInCents }: { priceInCents: number }) {
       <Card>
         <CardHeader>
           <CardTitle>Checkout</CardTitle>
-          <CardDescription className="text-destructive">Error</CardDescription>
+          {errorMessage && (
+            <CardDescription className="text-destructive">
+              {errorMessage}
+            </CardDescription>
+          )}
         </CardHeader>
         <CardContent>
           {/* the actual stripe payment section here */}
           <PaymentElement />
+          <div className="mt-4">
+            <LinkAuthenticationElement />
+          </div>
         </CardContent>
         <CardFooter>
           <Button
