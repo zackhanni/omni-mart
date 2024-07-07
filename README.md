@@ -14,4 +14,4 @@ https://www.youtube.com/watch?v=iqrgggs0Qk0
 
 ## tools used
 
-prisma, sqlite, shadcn,
+prisma, sqlite, shadcn, resend (emailing receipts), stripe (payment processing), CRUD, node.js,
