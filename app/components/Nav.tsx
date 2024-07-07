@@ -16,11 +16,17 @@ export default function Nav() {
   ];
 
   return (
-    <nav className="sticky top-0 w-full z-10 bg-gradient-to-r from-indigo-950 to-purple-700 text-white">
+    <nav className="sticky top-0 w-full z-20 bg-gradient-to-r from-indigo-950 to-purple-700 text-white">
       {/* top section nav */}
       <div className="flex flex-row justify-between items-center font-bold w-full px-4 space-x-4">
         <Link href="/" className="translate-y-1">
           <Logo />
+          {/* <Image
+            src="../../public/logo.svg"
+            width={71}
+            height={65}
+            alt="Omni Mart Logo"
+          /> */}
         </Link>
         <form className="flex py-3 md:min-w-[60%]">
           <input

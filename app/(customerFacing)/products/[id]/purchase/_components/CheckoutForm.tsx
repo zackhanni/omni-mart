@@ -34,13 +34,13 @@ type CheckoutFormProps = {
 };
 
 const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY as string
+  process.env.NEXT_PUBLIC_STRIPE_PUBLIC_TEST_KEY as string
 );
 
 export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
   return (
     <>
-      <div className="max-w-5xl w-full mx-auto space-y-8">
+      <div className="max-w-5xl w-full mx-auto space-y-8 py-16">
         <div className="flex gap-4 items-center">
           <div className="flex-shrink-0 w-1/3 h-48 relative">
             <Image
@@ -58,6 +58,7 @@ export function CheckoutForm({ product, clientSecret }: CheckoutFormProps) {
             <div className="text-muted-foreground">{product.description}</div>
           </div>
         </div>
+        {/* purchase form from stripe */}
         <Elements options={{ clientSecret }} stripe={stripePromise}>
           <Form priceInCents={product.priceInCents} productId={product.id} />
         </Elements>
