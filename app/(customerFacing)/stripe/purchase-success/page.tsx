@@ -54,7 +54,13 @@ export default async function SuccessPage({
             <div className="text-muted-foreground">{product.description}</div>
             <Button className="mt-4" size="lg" asChild>
               {isSuccess ? (
-                <a>Download</a>
+                <a
+                  href={`/products/download/[${await createDownloadVerification(
+                    product.id
+                  )}]`}
+                >
+                  Download
+                </a>
               ) : (
                 <Link href={`/products/${product.id}/purchase`}>Try Again</Link>
               )}
@@ -65,3 +71,14 @@ export default async function SuccessPage({
     </section>
   );
 }
+
+const createDownloadVerification = async (productId: string) => {
+  return (
+    await db.downloadVerification.create({
+      data: {
+        productId,
+        expiresAt: new Date(Date.now() + 1000 * 60 * 60 * 24),
+      },
+    })
+  ).id;
+};
