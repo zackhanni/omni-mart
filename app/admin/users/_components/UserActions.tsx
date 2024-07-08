@@ -2,7 +2,7 @@
 
 import { DropdownMenuItem } from "@/app/components/ui/dropdown-menu";
 import { useRouter } from "next/navigation";
-import { startTransition, useTransition } from "react";
+import { useTransition } from "react";
 import { deleteUser } from "../../_actions/users";
 
 export function DeleteDropdownItem({ id }: { id: string }) {
@@ -20,7 +20,7 @@ export function DeleteDropdownItem({ id }: { id: string }) {
         })
       }
     >
-      defaultChecked
+      Delete Customer
     </DropdownMenuItem>
   );
 }

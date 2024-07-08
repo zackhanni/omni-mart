@@ -20,7 +20,7 @@ export function DeleteDropdownItem({ id }: { id: string }) {
         })
       }
     >
-      defaultChecked
+      Delete Order
     </DropdownMenuItem>
   );
 }

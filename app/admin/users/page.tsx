@@ -20,7 +20,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from "@/app/components/ui/dropdown-menu";
-import { DeleteDropdownItem } from "../products/_components/ProductActions";
+import { DeleteDropdownItem } from "./_components/UserActions";
 
 function getUsers() {
   return db.user.findMany({
