@@ -2,6 +2,7 @@ import db from "@/db/db";
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { Resend } from "resend";
+import PurchaseReceiptEmail from "@/app/email/PurchaseReceipt";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_TEST_KEY as string);
 
@@ -50,7 +51,19 @@ export async function POST(req: NextRequest) {
       from: `Support <${process.env.SENDER_EMAIL}>`,
       to: email,
       subject: "Order Confirmation",
-      react: "test text",
+      react:
+        // (
+        //   <PurchaseReceiptEmail
+        //     order={order}
+        //     product={product}
+        //     downloadVerificationId={downloadVerification.id}
+        //   />
+        // ),
+
+        // running into issues here. check video 3hrs 24min
+        // https://www.youtube.com/watch?v=iqrgggs0Qk0
+
+        "testing testing 1 2 3",
     });
   }
 
