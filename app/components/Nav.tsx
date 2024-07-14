@@ -39,13 +39,17 @@ export default function Nav() {
           </button>
         </form>
         <div className="flex items-center space-x-8">
-          <div className="no-underline text-white hover:underline rounded-full items-center flex flex-row">
+          <Link
+            href="orders"
+            className="no-underline text-white hover:underline rounded-full items-center flex flex-row"
+          >
             <FontAwesomeIcon icon={faUser} className="w-[17px] h-auto" />
             <div className="pl-2 flex flex-col">
               <span className="font-normal text-sm -mb-1">Sign In</span>
               Account
             </div>
-          </div>
+          </Link>
+
           <Link
             href="/"
             className="no-underline text-white flex flex-col items-center space-y-0.5"

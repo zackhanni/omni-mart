@@ -7,7 +7,6 @@ import {
   Section,
   Text,
 } from "@react-email/components";
-import React from "react";
 
 type OrderInformationProps = {
   order: { id: string; createdAt: Date; pricePaidInCents: number };
@@ -17,7 +16,7 @@ type OrderInformationProps = {
 
 const dateFormatter = new Intl.DateTimeFormat("en", { dateStyle: "medium" });
 
-export default function OrderInformation({
+export function OrderInformation({
   order,
   product,
   downloadVerificationId,

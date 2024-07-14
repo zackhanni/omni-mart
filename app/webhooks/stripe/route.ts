@@ -54,8 +54,8 @@ export async function POST(req: NextRequest) {
       react:
         // (
         //   <PurchaseReceiptEmail
-        //     order={order}
         //     product={product}
+        //     order={order}
         //     downloadVerificationId={downloadVerification.id}
         //   />
         // ),
@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
         // running into issues here. check video 3hrs 24min
         // https://www.youtube.com/watch?v=iqrgggs0Qk0
 
-        "testing testing 1 2 3",
+        "Sorry, were experiencing an issue. Visit our website and request your orders through the orders tab (/orders)",
     });
   }
 
