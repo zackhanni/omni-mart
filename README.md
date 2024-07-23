@@ -15,3 +15,8 @@ https://www.youtube.com/watch?v=iqrgggs0Qk0
 ## tools used
 
 prisma, sqlite, shadcn, resend (emailing receipts), stripe (payment processing), CRUD, node.js,
+
+
+## TO FIX
+
+in webhooks/stripe/route, change .ts to .tsx so that the react component in the email body will load. thats what the problem is!!
