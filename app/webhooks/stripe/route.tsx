@@ -51,19 +51,16 @@ export async function POST(req: NextRequest) {
       from: `Support <${process.env.SENDER_EMAIL}>`,
       to: email,
       subject: "Order Confirmation",
-      react:
-        // (
-        //   <PurchaseReceiptEmail
-        //     product={product}
-        //     order={order}
-        //     downloadVerificationId={downloadVerification.id}
-        //   />
-        // ),
+      react: (
+        <PurchaseReceiptEmail
+          product={product}
+          order={order}
+          downloadVerificationId={downloadVerification.id}
+        />
+      ),
 
-        // running into issues here. check video 3hrs 24min
-        // https://www.youtube.com/watch?v=iqrgggs0Qk0
-
-        "Sorry, were experiencing an issue. Visit our website and request your orders through the orders tab (/orders)",
+      // running into issues here. check video 3hrs 24min
+      // https://www.youtube.com/watch?v=iqrgggs0Qk0
     });
   }
 
