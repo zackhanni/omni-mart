@@ -45,7 +45,8 @@ export function ProductCardVertical({
       <div className="w-full h-56 relative">
         <Image
           src={imagePath}
-          fill
+          width={304}
+          height={224}
           alt={name}
           className="w-full object-cover h-full"
         />
@@ -115,7 +116,13 @@ export function ProductCardHorizontal({
         </CardFooter>
       </div>
       <div className="relative w-1/2 h-full">
-        <Image src={imagePath} fill alt={name} className="object-cover" />
+        <Image
+          src={imagePath}
+          width={270}
+          height={317}
+          alt={name}
+          className="object-cover w-full h-full"
+        />
       </div>
     </Card>
   );
