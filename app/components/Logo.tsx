@@ -1,13 +1,14 @@
 import React from "react";
 
-export default function Logo() {
+export default function Logo({ className }: { className: string }) {
   return (
     <div>
       <svg
         id="177670670"
         viewBox="0 -5 350 248.05912272135416"
         height="65"
-        width="auto"
+        className={className}
+
         // style="width: 350px; height: 248.059px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.651429); z-index: 0; cursor: pointer; overflow: visible;"
       >
         <defs id="SvgjsDefs1776"></defs>
