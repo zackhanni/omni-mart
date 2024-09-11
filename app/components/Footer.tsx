@@ -58,12 +58,12 @@ export default function Footer() {
       <div className="container pt-20 pb-16 text-white">
         <div className="row">
           {/* logo and info */}
-          <div className="col-lg-3 mb-4">
+          <div className="col-lg-5 mb-16 mb-lg-0">
             <div className="pb-2">
-              <Logo />
+              <Logo className="w-full h-24" />
             </div>
 
-            <p className="">
+            <p className="text-center max-w-xs mx-auto">
               We are a celestial emporium where the wonders of the universe come
               together for the ultimate shopping experience.
             </p>
@@ -79,10 +79,10 @@ export default function Footer() {
                 );
               })}
             </div> */}
-            <p className="">2024 OmniMart. All rights reserved.</p>
+            <p className="text-center">2024 OmniMart. All rights reserved.</p>
           </div>
           {/* featured */}
-          <div className="offset-lg-1 col-6 col-lg-2 mb-4">
+          <div className="col-6 col-sm-4 col-lg-2">
             <h3 className="font-bold">Featured</h3>
             <ul className="flex flex-col list-unstyled space-y-2">
               {footerLinks.featured.map((link) => {
@@ -100,7 +100,7 @@ export default function Footer() {
             </ul>
           </div>
           {/* contact us */}
-          <div className="col-6 col-lg-2 mb-4">
+          <div className="col-6 col-sm-4 col-lg-2">
             <h3 className="font-bold">Contact us</h3>
             <ul className="list-unstyled space-y-2">
               <li>{contact.address}</li>
@@ -109,18 +109,18 @@ export default function Footer() {
             </ul>
           </div>
           {/* instagram images */}
-          <div className="offset-lg-1 col-6 col-lg-3 mb-4">
-            <h3 className="font-bold">Instagram</h3>
-            <div className="row row-cols-3 gy-4">
+          <div className="col-sm-4 col-lg-3">
+            <h3 className="font-bold text-center sm:text-start">Instagram</h3>
+            <div className="grid grid-cols-3 gap-4 place-items-center">
               {instagramImageLinks.map((link) => {
                 return (
                   <Image
                     key={link}
                     src={link}
-                    width={70}
-                    height={70}
+                    width={82}
+                    height={82}
                     alt={`Instagram picture ${link}`}
-                    className="object-cover size-[70px] hover:scale-105 duration-300 "
+                    className="object-cover aspect-square max-size-24 hover:scale-105 duration-300 "
                   />
                 );
               })}
