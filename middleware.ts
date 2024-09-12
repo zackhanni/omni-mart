@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { isValidPassword } from "./lib/isValidPassword";
 
 export default async function middleware(req: NextRequest) {
-  if ((await isAuthenditcated(req)) === false) {
+  if ((await isAuthenticated(req)) === false) {
     return new NextResponse("Unauthorized", {
       status: 401,
       headers: {
@@ -12,7 +12,7 @@ export default async function middleware(req: NextRequest) {
   }
 }
 
-const isAuthenditcated = async (req: NextRequest) => {
+const isAuthenticated = async (req: NextRequest) => {
   const authHeader =
     req.headers.get("authorization") || req.headers.get("Authorization");
 
